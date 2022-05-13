@@ -16,7 +16,7 @@
   ],
   "rules": {
     "semi": ["error", "always"],
-    "quotes": ["error", "single"],
+    "quotes": ["error", "double"],
     "vue/html-closing-bracket-newline": [
       "error",
       {
@@ -38,11 +38,6 @@
         "math": "always"
       }
     ],
-    "vue/multi-word-component-names": [
-      "error",
-      {
-        "ignores": ["Hello"]
-      }
-    ]
+    "vue/multi-word-component-names": "off"
   }
 }
