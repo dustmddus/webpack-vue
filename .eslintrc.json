@@ -1,0 +1,48 @@
+{
+  // 브라우저의 전역 api나 노드 js의 전역 api의 lint 규칙 확인
+  "env": {
+    // 대표적으로 윈도우 객체나 document 객체를 eslint로 확인하지 않겠다는 의미
+    // "browser": false,
+    "browser": true,
+
+    // require 함수나 module.exports라든가 __dirname같은 것들을 확인하겠다는 의미
+    "node": true
+  },
+  "extends": [
+    // eslint에서 추천되는 규칙을 사용하겠다는 의미
+    "eslint:recommended",
+    // eslint 플러그인 vue라는 패키지를 통해 적용
+    "plugin:vue/vue3-recommended"
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "vue/html-closing-bracket-newline": [
+      "error",
+      {
+        "singleline": "never",
+        "multiline": "never"
+      }
+    ],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          // 뒤에 /붙임
+          "void": "always",
+          //   뒤에 / 안 붙임
+          "normal": "never",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ],
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        "ignores": ["Hello"]
+      }
+    ]
+  }
+}

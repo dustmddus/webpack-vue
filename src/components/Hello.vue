@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello</h1>
+  <h1>HelloWpr</h1>
 </template>
 
 <style scoped lang="scss">
