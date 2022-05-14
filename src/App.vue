@@ -1,37 +1,30 @@
 <template>
-  <h1 v-if="msg" class="message" @click="log">
-    {{ msg }}
-  </h1>
-  <div></div>
-  <!-- 굳이 닫힘태그가 없어도 된다.  -->
-  <Hello />
-</template>
+  <h1>설문 조사</h1>
+  <TextField v-model="fields[0].value" />
+  </template>
+  <script>
+    import TextField from "~/components/fields/TextField";
 
-<script>
-// 지역등록 해줌
-//
-import Hello from "~/components/Hello";
-
-export default {
-  components: {
-    Hello,
-  },
-  data() {
-    return {
-      msg: "Hello Webpack??..",
-    };
-  },
-  methods: {
-    log() {
-      window.addEventListener();
-      document.querySelector();
-    },
-  },
-};
-</script>
-
-<!-- <style>
-    h1 {
-    color: orange;
+    export default {
+    components:{
+    TextField
     }
-</style> -->
+    data(){
+    return{
+    fields:[
+    {
+    component:"TextField",
+    title:"이름",
+    value:""
+    },
+    {
+    component:"SimpleRadio",
+    title:"나이대",
+    value:"",
+    item:["20대","30대","40대","50대"]
+    }
+    ]
+    };
+    }
+    };
+  </script>
