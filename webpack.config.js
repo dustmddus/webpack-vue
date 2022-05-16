@@ -24,6 +24,8 @@ module.exports = {
     //두번째 인자는 결과물이 들어갈 파일 이름. 통상적으로 dist, build, public으로 설정
 
     path: path.resolve(__dirname, "dist"),
+    //
+    publicPath: "/",
     //   반환되는 파일의 이름이 무엇인지
     // 파일의 이름 생략하면 entry에 접근한 파일로 파일명 출력, filename 직상은 필수가 아니다.
     // filename: "hell.js",
@@ -68,4 +70,10 @@ module.exports = {
   //   devServer: {
   //     port: 1234,
   //   },
+  devServer: {
+    // /about으로 접근하게 되면 로컬 서버로 about에 해당하는 로컬 서버를 보여달라는
+    // 요청이 들어오게 된다. 그랬을 때 devserver가 기본적인 /index.html 파일로 redirect 시켜줄 수 있다.
+    // historyApi를 기본 경로로 대체해서 제공을 하겠다는 옵션
+    historyApiFallback: true,
+  },
 };
